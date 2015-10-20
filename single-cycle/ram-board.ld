@@ -1,7 +1,7 @@
 ENTRY(_reset)
 SECTIONS
 {
-    . = 0;
+    . = 0x00000000;
     .text : { *(.text) }
     .data : { *(.data) }
     .bss : { *(.bss) }

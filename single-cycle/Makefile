@@ -23,20 +23,16 @@ export	CROSS_COMPILE
 # Rules of Compilation
 # ********************
 
-all: $(OBJECTS)
-	$(LD) $(LDFLAGS) -T ram-qemu.ld $(OBJECTS) -o bootloader
-	$(OBJCOPY) -O binary bootloader bootloader.bin
-	$(OBJDUMP) -D bootloader  > code.txt
-board:$(OBJECTS)
-	$(LD) $(LDFLAGS) -T ram-board.ld $(OBJECTS) -o bootloader
-	$(OBJCOPY) -O binary bootloader bootloader.bin
-	$(OBJDUMP) -D bootloader  > code.txt
-	python bin2text.py bootloader.bin ram.txt
+all:$(OBJECTS)
+	$(LD) $(LDFLAGS) -T ram-board.ld $(OBJECTS) -o boot
+	$(OBJCOPY) -O binary boot boot.bin
+	$(OBJDUMP) -D boot  > code.txt
+	python ../utils/bin2text.py boot.bin ram.txt
 run:
-	qemu-system-mipsel -kernel bootloader -serial stdio
+	qemu-system-mipsel -kernel boot -serial stdio
 debug:
-	qemu-system-mipsel -kernel bootloader -serial stdio  -S -gdb tcp::1234
+	qemu-system-mipsel -kernel boot -serial stdio  -S -gdb tcp::1234
 clean:
-	-rm bootloader* $(OBJECTS) $(OBJECTS:.o=.d) code.txt
+	-rm boot* $(OBJECTS) $(OBJECTS:.o=.d) code.txt
 
 	
