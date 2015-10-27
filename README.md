@@ -1,6 +1,6 @@
 # CPU-Tests 
 
-* 安装MIPS-GCC，在[https://www.mentor.com/embedded-software/sourcery-tools/sourcery-codebench/editions/lite-edition/]下载MIPS Processors GNU/LINUX Release，选择Windows或Linux版本均可。
+* 安装MIPS-GCC，在 [https://www.mentor.com/embedded-software/sourcery-tools/sourcery-codebench/editions/lite-edition/](https://www.mentor.com/embedded-software/sourcery-tools/sourcery-codebench/editions/lite-edition/) 下载MIPS Processors GNU/LINUX Release，选择Windows或Linux版本均可。
 * 在single-cycle文件夹中，
 	* start.S为起始汇编代码，_reset为CPU reset后的入口地址，可以在此编写自己的汇编测试代码。
 	* ram-board.ld为链接脚本文件，控制输出文件内各部分在内地址空间中的布局，如果你的存储器地址范围不是从0开始，你需要修改SECTIONS字段。
