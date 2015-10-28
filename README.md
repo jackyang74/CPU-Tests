@@ -9,4 +9,4 @@
 	* 将自己的汇编测试代码添加到start.S中
 	* 在single-cycle目录下，执行make命令，会生成boot、boot.bin、code.txt、ram.txt等文件。boot是基于MIPS指令的可执行文件，boot.bin是从boot文件中抽取的二进制信息。code.txt为反汇编文件，可以检查编译后的代码是否符合要求。ram.txt为存储器数据初始化文件，由python程序utils/bin2text.py将boot.bin转换得到。将ram.txt中的数据复制到你的存储器初始化文件中，使用$readmemh为你的存储器赋予初始值。这些初始值可以用来仿真，也可以下载到板子上。
 
-# 汇编测试代码尚未完善
+
