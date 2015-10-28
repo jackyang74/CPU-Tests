@@ -7,9 +7,9 @@ LD = $(CROSS_COMPILE)ld
 OBJCOPY = $(CROSS_COMPILE)objcopy
 OBJDUMP = $(CROSS_COMPILE)objdump
 
-CFLAGS = -MD -fno-pic -static -fno-strict-aliasing -fno-builtin  -fno-stack-protector -mno-check-zero-division -fno-delayed-branch -Wall -Werror -O2  -EL -march=mips32 -mno-llsc -mno-imadd -mno-mad -I../include 
+CFLAGS = -MD -fno-pic -static -fno-strict-aliasing -fno-builtin  -fno-stack-protector -mno-check-zero-division -fno-delayed-branch -Wall -Werror -O2  -EL -march=mips32r2 -mno-llsc -mno-imadd -mno-mad -I../include 
 CFLAGS += -g
-ASFLAGS = -MD -EL -mno-check-zero-division -mips32
+ASFLAGS = -MD -EL -mno-check-zero-division -mips32r2
 LDFLAGS = -EL
 
 
