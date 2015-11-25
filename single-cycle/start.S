@@ -3,7 +3,7 @@
 .set noat
 .set noreorder
 
-#if the program excutes without error, then $gp will be set 1,  otherwise 0
+#the program excutes without error, then $gp will be set 1,  otherwise 0
 #please check valule of $gp in your simulation wave window
 
 
